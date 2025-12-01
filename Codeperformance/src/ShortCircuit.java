@@ -11,8 +11,8 @@ public class ShortCircuit {
 		
 		String letters[] = {"a","b","c"};
 		String empty[] = {};
-		// c.isFirstItem("a", letters);
-		// c.isFirstItem("a", empty);
+		c.isFirstItem("a", letters);
+		c.isFirstItem("a", empty);
 	}
 
 	public String shortAndCircuit(int x)
@@ -42,10 +42,9 @@ public class ShortCircuit {
 	}
 	
 	public boolean isFirstItem(String word, String[] items)
-	{
-		return (items[0].equals(word));
-	}
-	
+    {
+        return (isNotEmpty(items) && items[0].equals(word));
+    }
 	public boolean isNotEmpty(String[] a)
 	{
 		return (a != null && a.length > 0);

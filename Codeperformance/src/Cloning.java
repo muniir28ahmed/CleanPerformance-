@@ -7,8 +7,8 @@ public class Cloning
 		Cloning c = new Cloning();
 		
 		c.shallowCopyString();
-//		c.shallowCopyStringBuffer();
-//		c.deepCopyStringBuffer();
+		c.shallowCopyStringBuffer();
+		c.deepCopyStringBuffer();
 	}
 
 	public void shallowCopyString()
@@ -97,7 +97,14 @@ public class Cloning
 		// This creates a new list that shares the same references as the objects in 'a'.
 		c = (ArrayList<StringBuffer>)a.clone();
 
-		System.out.println("\Deep Copy - StringBuffer");
+        StringBuffer sba;
+        for (int i=0; i<a.size(); i++)
+        {
+            sba = a.get(i);
+            c.set(i, new StringBuffer(sba));
+        }
+
+		System.out.println("\\Deep Copy - StringBuffer");
 		System.out.println("a:" + a);
 		System.out.println("b:" + b);
 		System.out.println("c:" + c);

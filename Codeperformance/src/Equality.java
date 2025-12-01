@@ -6,7 +6,7 @@ public class Equality
 		String h2 = new String("hello");
 		
 		String h3 = "hello";
-		String h4 = "hello";
+		String h4 = "Goodbye";
 				
 		System.out.println(h1==h2);
 		

@@ -11,7 +11,7 @@ public class Strings {
 		int repetitions = 10;
 		int appends = 100000;
 		s.timeTest("stringLoop",s::stringLoop, repetitions, appends);
-//		s.timeTest("stringBufferLoop",s::stringBufferLoop, reps, appends);
+		s.timeTest("stringBufferLoop",s::stringBufferLoop, repetitions, appends);
 	}
 	
 	public String stringLoop(int loops)
@@ -28,12 +28,13 @@ public class Strings {
 	{
 		// Modify the following to use a StringBuffer instead
 		// instead of a String to add up all the dots.
-		String s = "";		
+		StringBuffer Sb = new StringBuffer();
+        String s = ".";
 		for (int l=0; l<loops; l++)
 		{
-			s = s + ".";
+			Sb.append(s);
 		}
-		return s;
+		return Sb.toString();
 	}
 
 	public void timeTest(String name, Function<Integer,String> func,int repeats, int appends)

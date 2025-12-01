@@ -16,17 +16,21 @@ public class CoModifier
 	
 	public void listModifier(ArrayList<Double> numbers, Double threshold)
 	{
-		int i = 0;
-		
-		for (Double d : numbers)
+		for (int i= 0; i < numbers.size(); i++)
+        {
+        System.out.println("Removing value " + numbers.get(i));
+        numbers.remove(i);
+        }
+
+    /*    for (int i= 0; i < numbers.size(); i++)
 		{
-			if (d >= threshold)
+			if (numbers.get(i) >= threshold)
 			{
-				System.out.println("Removing value " + d);
+				System.out.println("Removing value " + numbers.get(i));
 				numbers.remove(i);
 			}
 			i = i + 1;
-		}
+		}*/
 	}
 	
 }
